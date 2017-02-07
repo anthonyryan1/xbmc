@@ -197,6 +197,14 @@ Compiling Kodi for Android consists of compiling the libraries Kodi depends
 on with the Android toolchain and creating an Android Application Package
 (APK) which can be installed in an Android system.
 
+You may also wish to add to your CFLAGS and CXXFLAGS environment variables
+to take advantage of CPU features like ARM NEON (if they're not already enabled
+by default on your system). Some sensible values are provided here for your
+convenience.
+
+    $ export CFLAGS="-O2 -mfpu=neon -mvectorize-with-neon-quad"
+    $ export CXXFLAGS="${CFLAGS}"
+
 --------------------------------------------------------------------
 5.1. Building dependencies
 --------------------------------------------------------------------
